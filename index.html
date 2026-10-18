@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Amisha Kicks — Sneakers & Shoes</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { scroll-behavior:smooth; }
+
+  :root, [data-theme="light"] {
+    --bg: #ffffff;
+    --bg-2: #faf7ff;
+    --card: #ffffff;
+    --card-2: #f4eefe;
+    --border: rgba(124,58,237,0.18);
+    --border-strong: rgba(124,58,237,0.4);
+    --ink: #1a0e2e;
+    --muted: #7a6b99;
+    --dim: #b6a8d1;
+    --accent: #7c3aed;
+    --accent-2: #6d28d9;
+    --accent-soft: rgba(124,58,237,0.1);
+    --accent-glow: rgba(124,58,237,0.3);
+    --danger: #dc2626;
+    --success: #16a34a;
+    --shadow: 0 2px 10px rgba(60,30,120,0.08);
+    --shadow-lg: 0 -20px 60px rgba(60,30,120,0.15);
+    --whatsapp: #25d366;
+    --band: #f6f1ff;
+  }
+
+  [data-theme="dark"] {
+    --bg: #0e0820;
+    --bg-2: #150d2e;
+    --card: #1a1140;
+    --card-2: #251a52;
+    --border: rgba(167,139,250,0.22);
+    --border-strong: rgba(167,139,250,0.5);
+    --ink: #f1eaff;
+    --muted: #b8a5e0;
+    --dim: #6a5a92;
+    --accent: #a78bfa;
+    --accent-2: #8b5cf6;
+    --accent-soft: rgba(167,139,250,0.14);
+    --accent-glow: rgba(167,139,250,0.4);
+    --danger: #ef4444;
+    --success: #34d399;
+    --shadow: 0 2px 10px rgba(0,0,0,0.5);
+    --shadow-lg: 0 -20px 60px rgba(0,0,0,0.7);
+    --whatsapp: #25d366;
+    --band: #1e1450;
+  }
+
+  body {
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+    padding-bottom:100px; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    transition:background 0.3s ease, color 0.3s ease;
+  }
+
+  .container { max-width:600px; margin:0 auto; padding:0 14px; }
+
+  /* ANNOUNCE */
+  .announce {
+    background:var(--accent); color:#fff;
+    font-size:11px; font-weight:800;
+    text-align:center; padding:10px 16px;
+    letter-spacing:1.5px; text-transform:uppercase;
+  }
+
+  /* HEADER */
+  header { padding:24px 0 16px; text-align:center; position:relative; }
+  .theme-toggle {
+    position:absolute; top:20px; right:14px;
+    width:40px; height:40px; border-radius:50%;
+    background:var(--card); border:1px solid var(--border-strong);
+    color:var(--accent); font-size:18px; cursor:pointer;
+    font-family:inherit; display:flex; align-items:center;
+    justify-content:center; line-height:1; padding:0;
+    transition:all 0.2s; z-index:5;
+  }
+  .theme-toggle:active { transform:scale(0.9); background:var(--accent); color:#fff; }
+  .theme-toggle .icon-sun { display:none; }
+  .theme-toggle .icon-moon { display:block; }
+  [data-theme="dark"] .theme-toggle .icon-sun { display:block; }
+  [data-theme="dark"] .theme-toggle .icon-moon { display:none; }
+
+  .brand-logo {
+    font-size:26px; font-weight:900;
+    letter-spacing:-0.8px; margin-bottom:4px;
+    animation:fadeDown 0.7s ease-out;
+  }
+  .brand-logo .amp { color:var(--accent); }
+  @keyframes fadeDown {
+    from { opacity:0; transform:translateY(-8px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(10px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  .brand-tagline {
+    font-size:10px; color:var(--accent);
+    font-weight:700; letter-spacing:2.5px;
+    text-transform:uppercase;
+    animation:fadeDown 0.7s ease-out 0.15s both;
+  }
+
+  .trust-row {
+    display:flex; justify-content:center; gap:12px;
+    margin-top:14px; font-size:10px; color:var(--muted);
+    font-weight:600; flex-wrap:wrap;
+    animation:fadeDown 0.7s ease-out 0.3s both;
+  }
+
+  /* TOP BANNER */
+  .top-bulk {
+    display:block; background:linear-gradient(135deg, var(--card), var(--card-2));
+    border:1px solid var(--border-strong); border-radius:14px;
+    padding:14px 18px; text-decoration:none; color:var(--ink);
+    box-shadow:0 6px 22px var(--accent-glow);
+    transition:transform 0.25s; margin-bottom:6px;
+    animation:fadeDown 0.7s ease-out 0.35s both;
+  }
+  .top-bulk:active { transform:scale(0.98); }
+  .top-bulk-inner { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .top-bulk-tag {
+    font-size:9px; color:var(--accent); font-weight:800;
+    letter-spacing:1.5px; text-transform:uppercase;
+    margin-bottom:3px;
+  }
+  .top-bulk-title { font-size:13px; font-weight:800; margin-bottom:1px; line-height:1.3; }
+  .top-bulk-sub { font-size:10px; color:var(--muted); }
+  .top-bulk-arrow { font-size:20px; color:var(--accent); }
+
+  section { padding:18px 0; }
+
+  .section-head {
+    display:flex; justify-content:space-between;
+    align-items:baseline; margin-bottom:14px;
+    padding-bottom:10px; border-bottom:1px solid var(--border);
+  }
+  .section-title { font-size:17px; font-weight:800; letter-spacing:-0.3px; color:var(--ink); }
+  .section-note {
+    font-size:10px; color:var(--accent); font-weight:700;
+    letter-spacing:1.2px; text-transform:uppercase;
+  }
+
+  .reveal {
+    opacity:0; transform:translateY(16px);
+    transition:opacity 0.6s cubic-bezier(0.2,0.8,0.2,1),
+               transform 0.6s cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* SEARCH */
+  .search-wrap { position:relative; margin-bottom:12px; }
+  .search-input {
+    width:100%; background:var(--card);
+    border:1px solid var(--border); border-radius:100px;
+    padding:12px 42px 12px 42px; color:var(--ink);
+    font-family:inherit; font-size:13px; outline:none;
+    transition:border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-input::placeholder { color:var(--dim); }
+  .search-input:focus {
+    border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .search-icon {
+    position:absolute; left:15px; top:50%;
+    transform:translateY(-50%); font-size:14px;
+    opacity:0.6; pointer-events:none;
+  }
+  .search-clear {
+    position:absolute; right:10px; top:50%;
+    transform:translateY(-50%); background:var(--accent-soft);
+    border:none; color:var(--accent);
+    width:24px; height:24px; border-radius:50%;
+    font-size:14px; font-weight:800; cursor:pointer;
+    display:none; align-items:center; justify-content:center;
+    line-height:1; font-family:inherit;
+  }
+  .search-clear.show { display:flex; }
+
+  /* CATEGORIES */
+  .category-bar {
+    display:flex; gap:6px; overflow-x:auto;
+    padding-bottom:4px; margin-bottom:4px;
+    scrollbar-width:none; -ms-overflow-style:none;
+  }
+  .category-bar::-webkit-scrollbar { display:none; }
+  .cat-pill {
+    flex-shrink:0; padding:7px 14px;
+    font-size:11px; font-weight:800; color:var(--muted);
+    background:var(--card); border:1px solid var(--border);
+    border-radius:100px; cursor:pointer; font-family:inherit;
+    white-space:nowrap; letter-spacing:0.4px;
+    transition:all 0.2s; text-transform:uppercase;
+  }
+  .cat-pill:active { transform:scale(0.95); }
+  .cat-pill.active {
+    background:var(--accent); color:#fff; border-color:var(--accent);
+  }
+
+  /* PRODUCT GRID — larger cards, 2 columns */
+  .product-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+
+  .product-card {
+    background:var(--card); border-radius:18px;
+    overflow:hidden; display:flex; flex-direction:column;
+    box-shadow:var(--shadow), 0 0 0 1px var(--border);
+    animation:fadeUp 0.5s ease-out backwards;
+    transition:transform 0.2s, box-shadow 0.3s;
+    cursor:pointer;
+  }
+  .product-card:active { transform:scale(0.98); }
+
+  .product-image {
+    width:100%; aspect-ratio:1 / 1;
+    position:relative; overflow:hidden;
+    background:var(--band);
+  }
+  .product-image img {
+    width:100%; height:100%; object-fit:cover;
+    display:block; user-select:none; -webkit-user-drag:none;
+    pointer-events:none;
+  }
+
+  .product-badge {
+    position:absolute; top:10px; left:10px;
+    background:var(--accent); color:#fff;
+    font-size:10px; font-weight:800;
+    padding:4px 10px; border-radius:100px;
+    letter-spacing:0.6px; z-index:2;
+  }
+  .product-badge.sale { background:var(--danger); }
+  .product-badge.new  { background:var(--success); }
+
+  .product-card.sold-out .product-image::after {
+    content:''; position:absolute; inset:0;
+    background:rgba(0,0,0,0.55); z-index:3;
+  }
+  .sold-badge {
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%, -50%) rotate(-8deg);
+    background:var(--danger); color:#fff;
+    font-size:11px; font-weight:900;
+    padding:7px 16px; border-radius:6px;
+    letter-spacing:1.5px; text-transform:uppercase;
+    z-index:4; box-shadow:0 4px 14px rgba(0,0,0,0.5);
+    border:1.5px solid #fff; white-space:nowrap;
+  }
+  .product-card.sold-out .add-btn {
+    background:var(--card-2); color:var(--dim);
+    box-shadow:none; cursor:not-allowed; pointer-events:none;
+  }
+
+  .product-body {
+    padding:12px 14px 14px; flex:1;
+    display:flex; flex-direction:column;
+  }
+
+  .product-name {
+    font-size:14px; font-weight:800; color:var(--ink);
+    margin-bottom:3px; letter-spacing:-0.2px; line-height:1.3;
+  }
+  .product-desc {
+    font-size:11px; color:var(--muted);
+    margin-bottom:8px; font-style:italic;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .product-price {
+    font-size:16px; font-weight:900; color:var(--accent);
+    display:flex; align-items:baseline; gap:6px;
+    letter-spacing:-0.3px; margin-bottom:10px;
+  }
+  .product-price .old {
+    font-size:11px; color:var(--dim);
+    text-decoration:line-through; font-weight:500;
+  }
+  .product-card.sold-out .product-price {
+    color:var(--dim); text-decoration:line-through;
+  }
+
+  .sizes { display:flex; gap:4px; margin-bottom:11px; flex-wrap:wrap; }
+  .size-pill {
+    padding:4px 9px; font-size:10px; font-weight:800;
+    color:var(--muted); background:transparent;
+    border:1px solid var(--border-strong); border-radius:100px;
+    cursor:pointer; font-family:inherit;
+    transition:all 0.2s; letter-spacing:0.5px;
+  }
+  .size-pill.active {
+    background:var(--accent); color:#fff; border-color:var(--accent);
+  }
+  .size-pill:active { transform:scale(0.94); }
+
+  .product-foot { margin-top:auto; display:flex; gap:6px; align-items:stretch; }
+
+  .qty {
+    display:flex; align-items:center;
+    background:var(--accent-soft); border-radius:100px;
+    padding:2px; border:1px solid var(--border);
+    flex-shrink:0;
+  }
+  .qty button {
+    width:24px; height:24px; border:none;
+    background:transparent; font-size:13px; font-weight:700;
+    cursor:pointer; font-family:inherit; color:var(--ink);
+    border-radius:50%; display:flex; align-items:center;
+    justify-content:center; padding:0;
+    transition:background 0.15s, transform 0.1s;
+  }
+  .qty button:active { background:var(--accent-soft); transform:scale(0.85); }
+  .qty span { min-width:20px; text-align:center; font-size:12px; font-weight:900; color:var(--ink); }
+
+  .add-btn {
+    flex:1; background:var(--accent); color:#fff;
+    border:none; border-radius:100px;
+    padding:8px 12px; font-size:11px; font-weight:800;
+    letter-spacing:0.4px; text-transform:uppercase;
+    cursor:pointer; font-family:inherit;
+    transition:all 0.25s; white-space:nowrap;
+    box-shadow:0 3px 10px var(--accent-glow);
+  }
+  .add-btn:active { transform:scale(0.94); }
+  .add-btn.added {
+    background:var(--success);
+    animation:addBounce 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes addBounce {
+    0%   { transform:scale(1); }
+    30%  { transform:scale(0.92); }
+    60%  { transform:scale(1.06); }
+    100% { transform:scale(1); }
+  }
+
+  /* LOADING / EMPTY */
+  .loading-state, .empty-state {
+    text-align:center; padding:50px 20px;
+    color:var(--muted); grid-column:1 / -1;
+  }
+  .loading-state .spinner {
+    width:32px; height:32px;
+    border:3px solid var(--card-2); border-top-color:var(--accent);
+    border-radius:50%; animation:spin 0.8s linear infinite;
+    margin:0 auto 14px;
+  }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .empty-state .icon { font-size:44px; margin-bottom:12px; opacity:0.6; }
+  .empty-state h3 { font-size:15px; font-weight:800; color:var(--ink); margin-bottom:6px; }
+  .empty-state p { font-size:12px; }
+
+  /* INFO GRID */
+  .info-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .info-card {
+    background:var(--card); border-radius:12px;
+    padding:14px; box-shadow:var(--shadow), 0 0 0 1px var(--border);
+    border-top:2px solid var(--accent);
+    transition:background 0.3s;
+  }
+  .info-card .icon { font-size:18px; margin-bottom:6px; }
+  .info-card .label {
+    font-size:9px; color:var(--accent); font-weight:800;
+    text-transform:uppercase; letter-spacing:1.2px;
+    margin-bottom:3px;
+  }
+  .info-card .value { font-size:12px; font-weight:800; color:var(--ink); letter-spacing:-0.2px; }
+
+  /* CONTACT */
+  .contact {
+    background:var(--card); border-radius:14px;
+    padding:22px 18px; text-align:center;
+    box-shadow:var(--shadow), 0 0 0 1px var(--border);
+    border-top:3px solid var(--accent);
+    position:relative; overflow:hidden;
+    transition:background 0.3s;
+  }
+  .contact::before {
+    content:''; position:absolute;
+    top:-50%; left:50%; transform:translateX(-50%);
+    width:200px; height:200px; border-radius:50%;
+    background:radial-gradient(circle, var(--accent-soft), transparent 70%);
+    pointer-events:none;
+  }
+  .contact h3 { font-size:17px; font-weight:800; margin-bottom:4px; color:var(--ink); position:relative; }
+  .contact p { font-size:12px; color:var(--muted); margin-bottom:16px; position:relative; }
+  .contact-links { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; position:relative; }
+  .contact-link {
+    display:flex; align-items:center; gap:6px;
+    background:var(--accent-soft); color:var(--ink);
+    padding:10px 14px; border-radius:100px;
+    text-decoration:none; font-size:11px; font-weight:800;
+    border:1px solid var(--border-strong);
+    cursor:pointer; transition:all 0.25s; font-family:inherit;
+  }
+  .contact-link:active { transform:scale(0.95); }
+  .contact-link.call {
+    background:var(--whatsapp); color:#fff;
+    border-color:var(--whatsapp);
+    box-shadow:0 4px 14px rgba(37,211,102,0.4);
+  }
+
+  footer {
+    text-align:center; padding:24px 0 30px;
+    font-size:11px; color:var(--dim); line-height:1.8;
+  }
+  footer .made {
+    font-style:italic; color:var(--accent);
+    font-size:12px; display:block; margin-top:4px;
+  }
+
+  /* CART BAR */
+  .cart-bar {
+    position:fixed; bottom:0; left:0; right:0;
+    background:var(--card); color:var(--ink);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    z-index:100; display:none;
+    box-shadow:var(--shadow-lg), 0 -1px 0 var(--border);
+    transition:background 0.3s;
+  }
+  .cart-bar.active { display:block; animation:slideUp 0.35s cubic-bezier(0.2,0.8,0.2,1); }
+  @keyframes slideUp {
+    from { transform:translateY(100%); opacity:0; }
+    to   { transform:translateY(0);    opacity:1; }
+  }
+  .cart-bar-inner {
+    max-width:600px; margin:0 auto;
+    display:flex; justify-content:space-between;
+    align-items:center; gap:12px;
+  }
+  .cart-info { flex:1; }
+  .cart-count {
+    font-size:10px; color:var(--muted); font-weight:700;
+    text-transform:uppercase; letter-spacing:1px;
+  }
+  .cart-total {
+    font-size:20px; font-weight:900;
+    letter-spacing:-0.6px; color:var(--accent);
+    transition:transform 0.3s;
+  }
+  .cart-total.pulse { animation:totalPulse 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+  @keyframes totalPulse {
+    0%   { transform:scale(1); }
+    50%  { transform:scale(1.1); color:var(--ink); }
+    100% { transform:scale(1); }
+  }
+  .checkout-btn {
+    background:var(--accent); color:#fff; border:none;
+    border-radius:100px; padding:12px 20px;
+    font-size:12px; font-weight:800; letter-spacing:0.8px;
+    text-transform:uppercase; cursor:pointer; font-family:inherit;
+    white-space:nowrap; box-shadow:0 4px 14px var(--accent-glow);
+    transition:all 0.25s;
+  }
+  .checkout-btn:active { transform:scale(0.96); }
+
+  /* MODAL */
+  .overlay {
+    position:fixed; inset:0; background:rgba(20,5,40,0.85);
+    z-index:500; display:none; align-items:flex-end;
+    justify-content:center; backdrop-filter:blur(8px);
+  }
+  .overlay.active { display:flex; animation:fadeIn 0.3s; }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  .modal {
+    background:var(--card); border-radius:20px 20px 0 0;
+    width:100%; max-width:600px;
+    padding:24px 20px calc(20px + env(safe-area-inset-bottom));
+    max-height:90vh; overflow-y:auto; position:relative;
+    animation:modalUp 0.4s cubic-bezier(0.2,0.8,0.2,1);
+    box-shadow:var(--shadow-lg); color:var(--ink);
+  }
+  @keyframes modalUp {
+    from { transform:translateY(100%); }
+    to   { transform:translateY(0); }
+  }
+  .modal-close {
+    position:absolute; top:14px; right:18px;
+    background:none; border:none; font-size:26px;
+    color:var(--muted); cursor:pointer; line-height:1;
+    font-family:inherit;
+  }
+  .modal-close:active { transform:scale(0.85) rotate(90deg); color:var(--accent); }
+  .modal h3 { font-size:20px; font-weight:800; margin-bottom:4px; color:var(--ink); }
+  .modal > p { font-size:12px; color:var(--muted); margin-bottom:16px; }
+
+  .cart-items {
+    background:var(--bg-2); border-radius:10px;
+    padding:4px 14px; margin-bottom:14px;
+    box-shadow:var(--shadow);
+  }
+  .cart-item { padding:12px 0; border-bottom:1px solid var(--border); font-size:13px; }
+  .cart-item:last-child { border-bottom:none; }
+  .ci-row { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+  .ci-left { flex:1; min-width:0; }
+  .ci-name { font-weight:800; margin-bottom:2px; color:var(--ink); font-size:13px; }
+  .ci-variant { font-size:10px; color:var(--muted); font-style:italic; }
+  .ci-controls { display:flex; align-items:center; gap:5px; flex-shrink:0; }
+  .ci-qty-btn {
+    width:26px; height:26px; border:1px solid var(--border-strong);
+    background:var(--accent-soft); color:var(--ink);
+    border-radius:50%; font-size:14px; font-weight:800;
+    cursor:pointer; font-family:inherit;
+    display:flex; align-items:center; justify-content:center;
+    line-height:1; padding:0;
+  }
+  .ci-qty-btn:active { background:var(--accent); color:#fff; transform:scale(0.9); }
+  .ci-qty-num { min-width:22px; text-align:center; font-size:13px; font-weight:800; color:var(--ink); }
+  .ci-remove {
+    background:none; border:none; color:var(--danger);
+    font-size:18px; font-weight:800; cursor:pointer;
+    font-family:inherit; padding:4px 6px; line-height:1;
+    border-radius:6px;
+  }
+  .ci-line-total {
+    font-weight:900; color:var(--accent); font-size:13px;
+    white-space:nowrap; min-width:70px; text-align:right;
+  }
+  .empty-cart-msg { text-align:center; padding:30px 10px; color:var(--muted); }
+  .empty-cart-msg .icon { font-size:2rem; margin-bottom:8px; }
+  .empty-cart-msg p { font-size:13px; }
+
+  .totals {
+    background:var(--bg-2); border-radius:10px;
+    padding:12px 14px; margin-bottom:16px;
+    box-shadow:var(--shadow);
+  }
+  .t-row {
+    display:flex; justify-content:space-between;
+    font-size:12px; padding:5px 0; color:var(--muted);
+  }
+  .t-row.grand {
+    border-top:1px solid var(--border);
+    margin-top:6px; padding-top:12px;
+    font-size:16px; font-weight:900; color:var(--accent);
+  }
+
+  .clear-cart-btn {
+    width:100%; background:transparent;
+    border:1px solid rgba(220,38,38,0.4);
+    color:var(--danger); border-radius:100px;
+    padding:11px; font-size:11px; font-weight:800;
+    letter-spacing:0.6px; text-transform:uppercase;
+    cursor:pointer; font-family:inherit; margin-top:12px;
+  }
+
+  .field { margin-bottom:12px; }
+  .field label {
+    display:block; font-size:10px; color:var(--accent);
+    font-weight:800; text-transform:uppercase;
+    letter-spacing:1.2px; margin-bottom:5px;
+  }
+  .field input, .field textarea {
+    width:100%; background:var(--bg-2);
+    border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; color:var(--ink);
+    font-family:inherit; font-size:14px; outline:none;
+    transition:border-color 0.2s, box-shadow 0.2s;
+  }
+  .field input::placeholder, .field textarea::placeholder { color:var(--dim); }
+  .field input:focus, .field textarea:focus {
+    border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .field textarea { resize:vertical; min-height:60px; }
+
+  .confirm-btn {
+    width:100%; background:var(--whatsapp); color:#fff;
+    border:none; border-radius:100px;
+    padding:15px; font-size:13px; font-weight:800;
+    letter-spacing:0.8px; text-transform:uppercase;
+    cursor:pointer; font-family:inherit; margin-top:4px;
+    box-shadow:0 4px 16px rgba(37,211,102,0.35);
+  }
+  .confirm-btn:active { transform:scale(0.97); }
+
+  .copy-btn {
+    width:100%; background:var(--accent-soft); color:var(--accent);
+    border:1px solid var(--border-strong); border-radius:100px;
+    padding:13px; font-size:12px; font-weight:800;
+    letter-spacing:0.6px; text-transform:uppercase;
+    cursor:pointer; font-family:inherit; margin-top:8px;
+  }
+
+  .toast {
+    position:fixed; bottom:100px; left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--accent); color:#fff;
+    padding:12px 22px; border-radius:100px;
+    font-size:12px; font-weight:800; opacity:0;
+    pointer-events:none;
+    transition:opacity 0.3s, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    z-index:400; max-width:90%; text-align:center;
+    box-shadow:0 8px 30px var(--accent-glow);
+  }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ============================================================
+     PRODUCT DETAIL WINDOW
+     ============================================================ */
+  .product-detail {
+    position:fixed; inset:0;
+    background:var(--bg); z-index:600;
+    display:none; flex-direction:column;
+    overflow:hidden;
+    animation:detailIn 0.35s cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .product-detail.active { display:flex; }
+  @keyframes detailIn {
+    from { opacity:0; transform:translateY(30px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  .detail-header {
+    flex-shrink:0; display:flex; align-items:center;
+    justify-content:space-between; padding:12px 16px;
+    background:var(--card); border-bottom:1px solid var(--border);
+    position:sticky; top:0; z-index:10;
+    backdrop-filter:blur(12px);
+  }
+  .detail-back-btn {
+    display:flex; align-items:center; gap:6px;
+    background:var(--accent-soft);
+    border:1px solid var(--border-strong);
+    color:var(--accent); padding:8px 16px;
+    border-radius:100px; font-size:12px; font-weight:800;
+    cursor:pointer; font-family:inherit;
+    letter-spacing:0.4px; transition:all 0.2s;
+    text-transform:uppercase;
+  }
+  .detail-back-btn:active {
+    transform:scale(0.94); background:var(--accent); color:#fff;
+  }
+  .detail-header-title {
+    font-size:13px; font-weight:800; color:var(--ink);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    max-width:200px;
+  }
+
+  .detail-scroll {
+    flex:1; overflow-y:auto; padding:0 0 40px;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .detail-gallery {
+    position:relative; width:100%;
+    aspect-ratio:1 / 1; background:var(--band);
+    overflow:hidden;
+  }
+  .gallery-track {
+    display:flex; height:100%;
+    transition:transform 0.35s cubic-bezier(0.2,0.8,0.2,1);
+    will-change:transform;
+  }
+  .gallery-slide {
+    flex:0 0 100%; height:100%;
+    display:flex; align-items:center;
+    justify-content:center; overflow:hidden;
+  }
+  .gallery-slide img {
+    width:100%; height:100%; object-fit:cover;
+    display:block; user-select:none; -webkit-user-drag:none;
+    pointer-events:none;
+  }
+  .gallery-dots {
+    position:absolute; bottom:14px; left:50%;
+    transform:translateX(-50%); display:flex; gap:6px; z-index:3;
+  }
+  .gallery-dot {
+    width:7px; height:7px; border-radius:50%;
+    background:rgba(255,255,255,0.5);
+    transition:all 0.25s; border:none; padding:0; cursor:pointer;
+  }
+  .gallery-dot.active {
+    background:var(--accent); width:20px; border-radius:100px;
+  }
+  .gallery-arrow {
+    position:absolute; top:50%;
+    transform:translateY(-50%);
+    width:38px; height:38px; border-radius:50%;
+    background:rgba(255,255,255,0.9);
+    border:1px solid var(--border);
+    color:var(--ink); font-size:20px;
+    display:flex; align-items:center;
+    justify-content:center; cursor:pointer;
+    z-index:4; transition:all 0.2s;
+    line-height:1; padding:0;
+  }
+  .gallery-arrow:active { transform:translateY(-50%) scale(0.88); }
+  .gallery-arrow.left { left:12px; }
+  .gallery-arrow.right { right:12px; }
+  .gallery-arrow.hidden { display:none; }
+
+  .detail-info {
+    padding:20px 20px 0; max-width:600px;
+    margin:0 auto; width:100%;
+  }
+  .detail-name {
+    font-size:24px; font-weight:900;
+    letter-spacing:-0.5px; margin-bottom:4px; color:var(--ink);
+  }
+  .detail-desc {
+    font-size:13px; color:var(--muted);
+    font-style:italic; margin-bottom:12px;
+  }
+  .detail-price {
+    font-size:26px; font-weight:900; color:var(--accent);
+    display:flex; align-items:baseline; gap:8px;
+    letter-spacing:-0.5px; margin-bottom:18px;
+  }
+  .detail-price .old {
+    font-size:16px; color:var(--dim);
+    text-decoration:line-through; font-weight:500;
+  }
+
+  .detail-variants { margin-bottom:18px; }
+  .detail-variants-label {
+    font-size:10px; font-weight:800; color:var(--accent);
+    text-transform:uppercase; letter-spacing:1.2px;
+    margin-bottom:8px;
+  }
+  .detail-sizes {
+    display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px;
+  }
+  .detail-size-pill {
+    padding:8px 18px; font-size:13px; font-weight:800;
+    color:var(--muted); background:var(--card);
+    border:1.5px solid var(--border-strong);
+    border-radius:100px; cursor:pointer;
+    font-family:inherit; transition:all 0.2s;
+    letter-spacing:0.5px;
+  }
+  .detail-size-pill.active {
+    background:var(--accent); color:#fff; border-color:var(--accent);
+  }
+  .detail-size-pill:active { transform:scale(0.94); }
+
+  .detail-actions {
+    display:flex; gap:10px; align-items:stretch;
+    margin-bottom:16px;
+  }
+  .detail-qty {
+    display:flex; align-items:center;
+    background:var(--accent-soft); border-radius:100px;
+    padding:4px; border:1px solid var(--border);
+    flex-shrink:0;
+  }
+  .detail-qty button {
+    width:36px; height:36px; border:none;
+    background:transparent; font-size:20px; font-weight:700;
+    cursor:pointer; font-family:inherit; color:var(--ink);
+    border-radius:50%; display:flex; align-items:center;
+    justify-content:center; padding:0;
+  }
+  .detail-qty button:active { background:var(--accent-soft); transform:scale(0.85); }
+  .detail-qty span {
+    min-width:30px; text-align:center; font-size:16px;
+    font-weight:900; color:var(--ink);
+  }
+
+  .detail-add-btn {
+    flex:1; background:var(--accent); color:#fff;
+    border:none; border-radius:100px;
+    padding:15px 20px; font-size:14px; font-weight:800;
+    letter-spacing:0.6px; text-transform:uppercase;
+    cursor:pointer; font-family:inherit;
+    transition:all 0.25s;
+    box-shadow:0 4px 16px var(--accent-glow);
+    white-space:nowrap;
+  }
+  .detail-add-btn:active { transform:scale(0.96); }
+  .detail-add-btn.added {
+    background:var(--success);
+    animation:addBounce 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .detail-add-btn:disabled {
+    background:var(--card-2); color:var(--dim);
+    box-shadow:none; cursor:not-allowed;
+  }
+
+  .detail-sold-msg {
+    text-align:center; padding:12px;
+    background:rgba(220,38,38,0.1);
+    border:1px solid rgba(220,38,38,0.3);
+    border-radius:12px; color:var(--danger);
+    font-weight:800; font-size:13px;
+    letter-spacing:0.5px; margin-bottom:16px;
+  }
+
+  .detail-trust {
+    display:flex; justify-content:center; gap:16px;
+    font-size:11px; color:var(--muted); font-weight:600;
+    padding:12px 0; border-top:1px solid var(--border);
+    flex-wrap:wrap;
+  }
+
+  @media (min-width: 601px) {
+    .product-detail {
+      background:rgba(20,5,40,0.85);
+      backdrop-filter:blur(8px);
+      align-items:center; justify-content:center;
+    }
+    .product-detail.active { display:flex; }
+    .detail-scroll {
+      max-width:600px; width:100%;
+      background:var(--bg); border-radius:20px;
+      overflow-y:auto; max-height:92vh;
+      box-shadow:0 30px 80px rgba(0,0,0,0.5);
+      animation:detailIn 0.35s cubic-bezier(0.2,0.8,0.2,1);
+    }
+    .detail-header { border-radius:20px 20px 0 0; }
+  }
+</style>
+</head>
+
+<body data-theme="light">
+
+<div class="announce">Nationwide delivery · Fresh kicks · Order on WhatsApp</div>
+
+<header>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+    <span class="icon-moon">🌙</span>
+    <span class="icon-sun">☀️</span>
+  </button>
+  <div class="container">
+    <div class="brand-logo">Amisha <span class="amp">Kicks</span></div>
+    <div class="brand-tagline">Sneakers · Shoes · Delivered</div>
+    <div class="trust-row">
+      <span>✨ Authentic pairs</span>
+      <span>🚚 Ships nationwide</span>
+      <span>↩️ 3-day returns</span>
+    </div>
+  </div>
+</header>
+
+
+<section>
+  <div class="container">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search sneakers, heels, slides...">
+      <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
+    </div>
+
+    <div class="category-bar" id="categoryBar"></div>
+
+    <div class="section-head" style="margin-top: 12px;">
+      <div class="section-title" id="resultTitle">All Kicks</div>
+      <div class="section-note" id="resultCount">Loading...</div>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading kicks...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-title">Delivery & Payment</div>
+    </div>
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <div class="icon">🚚</div>
+        <div class="label">Delivery</div>
+        <div class="value">Nationwide</div>
+      </div>
+      <div class="info-card reveal">
+        <div class="icon">🎁</div>
+        <div class="label">Free Ship</div>
+        <div class="value">Orders ₦100k+</div>
+      </div>
+      <div class="info-card reveal">
+        <div class="icon">💳</div>
+        <div class="label">Payment</div>
+        <div class="value">Transfer / Cash</div>
+      </div>
+      <div class="info-card reveal">
+        <div class="icon">↩️</div>
+        <div class="label">Returns</div>
+        <div class="value">3 days</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="contact reveal">
+      <h3>Looking for a specific pair?</h3>
+      <p>Send us the style and size — we'll find it for you.</p>
+      <div class="contact-links">
+        <a href="tel:+2349058760793" class="contact-link call">📞 Call Now</a>
+        <button class="contact-link" onclick="copyNumber()">📋 Copy Number</button>
+        <button class="contact-link" onclick="copyHandle()">📷 IG Handle</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Amisha Kicks
+    <span class="made">— Fresh pairs · Shipped nationwide —</span>
+  </div>
+</footer>
+
+<div class="cart-bar" id="cartBar">
+  <div class="cart-bar-inner">
+    <div class="cart-info">
+      <div class="cart-count" id="cartCount">0 items</div>
+      <div class="cart-total" id="cartTotal">₦0</div>
+    </div>
+    <button class="checkout-btn" onclick="openCheckout()">Checkout →</button>
+  </div>
+</div>
+
+<div class="overlay" id="checkoutOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeCheckout()">×</button>
+    <h3>Your Order</h3>
+    <p>Review and send your order.</p>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="totals" id="cartTotals"></div>
+
+    <div class="field">
+      <label>Your Name *</label>
+      <input type="text" id="custName" placeholder="Full name">
+    </div>
+    <div class="field">
+      <label>Your Phone Number *</label>
+      <input type="tel" id="custPhone" placeholder="080 1234 5678" inputmode="tel">
+    </div>
+    <div class="field">
+      <label>Delivery Address *</label>
+      <textarea id="custAddress" placeholder="Street, area, landmark, state"></textarea>
+    </div>
+    <div class="field">
+      <label>Notes (optional)</label>
+      <input type="text" id="custNotes" placeholder="Size preference, color, etc.">
+    </div>
+
+    <button class="confirm-btn" onclick="sendOrder()">Send Order via WhatsApp</button>
+    <button class="copy-btn" onclick="copyOrder()">Copy Order Text</button>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL WINDOW -->
+<div class="product-detail" id="productDetail">
+  <div class="detail-scroll" id="detailScroll">
+    <div class="detail-header">
+      <button class="detail-back-btn" onclick="closeDetail()">← Back</button>
+      <div class="detail-header-title" id="detailHeaderTitle"></div>
+      <div style="width:70px;"></div>
+    </div>
+
+    <div class="detail-gallery" id="detailGallery">
+      <div class="gallery-track" id="galleryTrack"></div>
+      <div class="gallery-dots" id="galleryDots"></div>
+      <button class="gallery-arrow left hidden" id="galleryPrev" onclick="galleryPrev()">‹</button>
+      <button class="gallery-arrow right hidden" id="galleryNext" onclick="galleryNext()">›</button>
+    </div>
+
+    <div class="detail-info">
+      <div class="detail-name" id="detailName"></div>
+      <div class="detail-desc" id="detailDesc"></div>
+      <div class="detail-price" id="detailPrice"></div>
+
+      <div class="detail-variants" id="detailVariants">
+        <div id="detailSizeSection">
+          <div class="detail-variants-label">Select Size</div>
+          <div class="detail-sizes" id="detailSizes"></div>
+        </div>
+      </div>
+
+      <div class="detail-sold-msg" id="detailSoldMsg" style="display:none;">Sold Out</div>
+
+      <div class="detail-actions" id="detailActions">
+        <div class="detail-qty">
+          <button type="button" onclick="detailChangeQty(-1)">−</button>
+          <span id="detailQtyDisplay">1</span>
+          <button type="button" onclick="detailChangeQty(1)">+</button>
+        </div>
+        <button class="detail-add-btn" id="detailAddBtn" onclick="detailAddToCart()">Add to Cart</button>
+      </div>
+
+      <div class="detail-trust">
+        <span>🚚 Ships nationwide</span>
+        <span>↩️ 3-day returns</span>
+        <span>💳 Transfer / Cash</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ============================================================
+     CONFIGURATION — change these for the real seller
+     ============================================================ */
+  const WHATSAPP_NUMBER = '2349058760793';
+  const INSTAGRAM_HANDLE = 'amishakicks';
+  // Leave as YOUR_DEPLOYMENT to use sample data below.
+  // Or paste the seller's Apps Script URL to load their real products.
+  const API_URL = 'https://script.google.com/macros/s/AKfycbxmLauUmEk91UmsACBRjXz7xk2NUluE8Tv_VK9Ztnp8lZp7n6ITWxXbqy04ZYshat4f/exec';
+
+  /* ============================================================
+     SAMPLE DATA (used when API_URL is not set)
+     Replace images with real Cloudinary URLs once you have them.
+     ============================================================ */
+  const SAMPLE_PRODUCTS = [
+    {
+      name: 'Nike Air Force 1 — White',
+      desc: 'Classic white leather. Brand new in box.',
+      price: 95000,
+      oldPrice: 120000,
+      category: 'Sneakers',
+      badge: 'NEW',
+      sizes: ['38','39','40','41','42','43','44','45'],
+      image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80']
+    },
+    {
+      name: 'Adidas Ultraboost 22',
+      desc: 'Comfort fit, boost sole. Great for running.',
+      price: 78000,
+      category: 'Sneakers',
+      badge: 'SALE',
+      oldPrice: 95000,
+      sizes: ['40','41','42','43','44'],
+      image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80']
+    },
+    {
+      name: 'Jordan 1 Retro High',
+      desc: 'Red and black. Fresh pair, size runs small.',
+      price: 145000,
+      category: 'Sneakers',
+      sizes: ['40','41','42','43'],
+      image: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80']
+    },
+    {
+      name: 'Classic White Slides',
+      desc: 'Everyday comfort. Unisex.',
+      price: 18000,
+      category: 'Slides',
+      sizes: ['S','M','L','XL'],
+      image: 'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=800&q=80']
+    },
+    {
+      name: 'Nude Stiletto Heels',
+      desc: 'Elegant pointed heel. Perfect for events.',
+      price: 45000,
+      category: 'Heels',
+      badge: 'NEW',
+      sizes: ['36','37','38','39','40'],
+      image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&q=80']
+    },
+    {
+      name: 'Timberland Boots',
+      desc: 'Premium leather. Weatherproof.',
+      price: 130000,
+      category: 'Boots',
+      sizes: ['41','42','43','44','45'],
+      image: 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&q=80',
+      images: ['https://images.unsplash.com/photo-160825624635b5b65f?w=800&q=80']
+    },
+    {
+      name: 'Vans Old Skool — Black',
+      desc: 'Skater classic. Black and white.',
+      price: 55000,
+      category: 'Sneakers',
+      sizes: ['38','39','40','41','42','43'],
+      image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&q=80']
+    },
+    {
+      name: 'New Balance 550',
+      desc: 'Retro basketball look. Clean colorway.',
+      price: 88000,
+      category: 'Sneakers',
+      badge: 'SALE',
+      oldPrice: 105000,
+      sizes: ['39','40','41','42','43','44'],
+      image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80',
+      images: ['https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80']
+    }
+  ];
+
+  /* THEME */
+  (function initTheme() {
+    const saved = localStorage.getItem('amisha-kicks-theme');
+    document.body.setAttribute('data-theme', saved || 'light');
+  })();
+  function toggleTheme() {
+    const current = document.body.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', next);
+    localStorage.setItem('amisha-kicks-theme', next);
+    if (navigator.vibrate) navigator.vibrate(8);
+  }
+
+  /* STATE */
+  let allProducts = [];
+  let activeCategory = 'All';
+  let searchTerm = '';
+  const cart = [];
+  let currentDetailProduct = null;
+  let currentImageIndex = 0;
+  let detailSelectedSize = null;
+  let detailQty = 1;
+
+  /* HELPERS */
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+  function naira(n) { return '₦' + Number(n).toLocaleString('en-NG'); }
+  function escapeHtml(str) {
+    return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function imagesForProduct(product) {
+    if (product.images && product.images.length) return product.images.slice();
+    if (product.image) return [product.image];
+    return [];
+  }
+  function chosenImageFor(product) {
+    const imgs = imagesForProduct(product);
+    return imgs[0] || '';
+  }
+
+  async function fetchProducts() {
+    // If API_URL is set (not the placeholder), fetch from it. Otherwise sample.
+    if (!API_URL || API_URL === 'YOUR_DEPLOYMENT_ID' || API_URL.includes('YOUR_DEPLOYMENT')) {
+      return SAMPLE_PRODUCTS;
+    }
+    const res = await fetch(API_URL, { cache: 'no-store' });
+    if (!res.ok) throw new Error('Could not reach API (' + res.status + ')');
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    return Array.isArray(data.products) ? data.products : SAMPLE_PRODUCTS;
+  }
+
+  /* CATEGORIES */
+  function getCategories() {
+    const cats = ['All'];
+    const seen = new Set();
+    allProducts.forEach(p => {
+      if (p.category && !seen.has(p.category)) {
+        seen.add(p.category);
+        cats.push(p.category);
+      }
+    });
+    return cats;
+  }
+  function renderCategories() {
+    const bar = document.getElementById('categoryBar');
+    const cats = getCategories();
+    bar.innerHTML = '';
+    cats.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'cat-pill' + (cat === activeCategory ? ' active' : '');
+      btn.textContent = cat;
+      btn.addEventListener('click', () => {
+        activeCategory = cat;
+        renderCategories();
+        renderProducts();
+        if (navigator.vibrate) navigator.vibrate(8);
+      });
+      bar.appendChild(btn);
+    });
+  }
+
+  function getFiltered() {
+    const term = searchTerm.toLowerCase().trim();
+    return allProducts.filter(p => {
+      const matchCat = activeCategory === 'All' || p.category === activeCategory;
+      if (!matchCat) return false;
+      if (!term) return true;
+      const haystack = (
+        (p.name || '') + ' ' + (p.desc || '') + ' ' + (p.category || '') + ' ' +
+        (p.sizes || []).join(' ')
+      ).toLowerCase();
+      return haystack.includes(term);
+    });
+  }
+
+  /* RENDER PRODUCTS */
+  function renderProducts() {
+    const grid = document.getElementById('productGrid');
+    const filtered = getFiltered();
+
+    document.getElementById('resultTitle').textContent =
+      activeCategory === 'All' ? 'All Kicks' : activeCategory;
+    document.getElementById('resultCount').textContent =
+      filtered.length + (filtered.length === 1 ? ' pair' : ' pairs');
+    grid.innerHTML = '';
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="icon">👟</div>
+          <h3>No kicks found</h3>
+          <p>Try another search or pick a different category.</p>
+        </div>`;
+      return;
+    }
+
+    filtered.forEach((product, idx) => {
+      const card = document.createElement('div');
+      card.className = 'product-card' + (product.soldOut ? ' sold-out' : '');
+      card.style.animationDelay = (idx * 0.03) + 's';
+
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'product-image';
+
+      const img = document.createElement('img');
+      const thumb = (product.images && product.images[0]) || product.image || '';
+      img.src = thumb;
+      img.alt = product.name;
+      img.loading = 'lazy';
+      img.onerror = () => {
+        imgWrap.style.background = 'var(--band)';
+        imgWrap.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:44px;opacity:0.4;">👟</div>';
+      };
+      imgWrap.appendChild(img);
+
+      if (product.badge && !product.soldOut) {
+        const badge = document.createElement('div');
+        badge.className = 'product-badge ' +
+          (product.badge === 'SALE' ? 'sale' : product.badge === 'NEW' ? 'new' : '');
+        badge.textContent = product.badge;
+        imgWrap.appendChild(badge);
+      }
+      if (product.soldOut) {
+        const sold = document.createElement('div');
+        sold.className = 'sold-badge';
+        sold.textContent = 'Sold Out';
+        imgWrap.appendChild(sold);
+      }
+
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.add-btn') || e.target.closest('.size-pill') ||
+            e.target.closest('.qty')) return;
+        openDetail(product);
+      });
+
+      const body = document.createElement('div');
+      body.className = 'product-body';
+
+      const name = document.createElement('div');
+      name.className = 'product-name';
+      name.textContent = product.name;
+
+      const desc = document.createElement('div');
+      desc.className = 'product-desc';
+      desc.textContent = product.desc || '';
+
+      const price = document.createElement('div');
+      price.className = 'product-price';
+      price.innerHTML = product.oldPrice
+        ? `${naira(product.price)} <span class="old">${naira(product.oldPrice)}</span>`
+        : naira(product.price);
+
+      const sizes = document.createElement('div');
+      sizes.className = 'sizes';
+      (product.sizes || ['One size']).forEach((sz, i) => {
+        const sp = document.createElement('button');
+        sp.className = 'size-pill' + (i === 0 ? ' active' : '');
+        sp.textContent = sz;
+        sp.addEventListener('click', (e) => { e.stopPropagation(); pickSize(sp, sz); });
+        sizes.appendChild(sp);
+      });
+      sizes.dataset.selected = (product.sizes && product.sizes[0]) || 'One size';
+
+      const foot = document.createElement('div');
+      foot.className = 'product-foot';
+
+      const qty = document.createElement('div');
+      qty.className = 'qty';
+      qty.innerHTML = `
+        <button type="button">−</button>
+        <span class="qty-display">1</span>
+        <button type="button">+</button>
+      `;
+      qty.querySelectorAll('button')[0].addEventListener('click', function (e) { e.stopPropagation(); changeQty(this, -1); });
+      qty.querySelectorAll('button')[1].addEventListener('click', function (e) { e.stopPropagation(); changeQty(this, 1); });
+
+      const addBtn = document.createElement('button');
+      addBtn.className = 'add-btn';
+      addBtn.textContent = product.soldOut ? 'Sold Out' : '+ Add';
+      if (!product.soldOut) {
+        addBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          addProduct(addBtn, product, sizes.dataset.selected,
+                     parseInt(qty.querySelector('.qty-display').textContent));
+        });
+      }
+
+      foot.appendChild(qty);
+      foot.appendChild(addBtn);
+
+      body.appendChild(name);
+      if (product.desc) body.appendChild(desc);
+      body.appendChild(price);
+      body.appendChild(sizes);
+      body.appendChild(foot);
+
+      card.appendChild(imgWrap);
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+  }
+
+  function pickSize(btn, size) {
+    const wrap = btn.closest('.sizes');
+    wrap.querySelectorAll('.size-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    wrap.dataset.selected = size;
+    if (navigator.vibrate) navigator.vibrate(8);
+  }
+  function changeQty(btn, delta) {
+    const wrap = btn.closest('.qty');
+    const display = wrap.querySelector('.qty-display');
+    let val = parseInt(display.textContent) + delta;
+    val = Math.max(1, Math.min(20, val));
+    display.textContent = val;
+    if (navigator.vibrate) navigator.vibrate(8);
+  }
+
+  function addProduct(btn, product, size, qty) {
+    if (product.soldOut) return;
+    const chosenImage = chosenImageFor(product);
+    if (!chosenImage) { showToast('No image available'); return; }
+
+    const existing = cart.find(i => i.name === product.name && i.size === size);
+    if (existing) {
+      existing.qty += qty;
+      existing.image = chosenImage;
+    } else {
+      cart.push({
+        name: product.name,
+        size: size,
+        price: product.price,
+        qty: qty,
+        image: chosenImage
+      });
+    }
+
+    btn.classList.add('added');
+    btn.textContent = `✓ ${qty}`;
+    setTimeout(() => {
+      btn.classList.remove('added');
+      btn.textContent = '+ Add';
+    }, 1200);
+
+    if (navigator.vibrate) navigator.vibrate(15);
+    showToast(`${qty}× ${product.name.split(' ')[0]} added`);
+    updateCartUI(true);
+  }
+
+  function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    searchTerm = '';
+    document.getElementById('searchClear').classList.remove('show');
+    renderProducts();
+  }
+
+  function updateCartUI(pulse) {
+    let count = 0, total = 0;
+    cart.forEach(item => { count += item.qty; total += item.price * item.qty; });
+    document.getElementById('cartCount').textContent = count === 1 ? '1 item' : `${count} items`;
+    const totalEl = document.getElementById('cartTotal');
+    totalEl.textContent = naira(total);
+    if (pulse) {
+      totalEl.classList.remove('pulse');
+      void totalEl.offsetWidth;
+      totalEl.classList.add('pulse');
+    }
+    const bar = document.getElementById('cartBar');
+    if (count > 0) bar.classList.add('active');
+    else bar.classList.remove('active');
+  }
+
+  /* CHECKOUT */
+  function openCheckout() {
+    renderCartModal();
+    document.getElementById('checkoutOverlay').classList.add('active');
+  }
+  function renderCartModal() {
+    const itemsEl = document.getElementById('cartItems');
+    const totalsEl = document.getElementById('cartTotals');
+
+    if (cart.length === 0) {
+      itemsEl.innerHTML = `<div class="empty-cart-msg"><div class="icon">🛒</div><p>Your cart is empty.</p></div>`;
+      totalsEl.innerHTML = '';
+      return;
+    }
+
+    let subtotal = 0;
+    let html = '';
+    cart.forEach((item, index) => {
+      const line = item.price * item.qty;
+      subtotal += line;
+      const variantText = item.size && item.size !== 'One size'
+        ? `Size: ${escapeHtml(item.size)}` : '';
+
+      html += `
+        <div class="cart-item">
+          <div class="ci-row">
+            <div class="ci-left">
+              <div class="ci-name">${escapeHtml(item.name)}</div>
+              ${variantText ? `<div class="ci-variant">${variantText}</div>` : ''}
+            </div>
+            <div class="ci-controls">
+              <button class="ci-qty-btn" onclick="changeCartQty(${index}, -1)">−</button>
+              <span class="ci-qty-num">${item.qty}</span>
+              <button class="ci-qty-btn" onclick="changeCartQty(${index}, 1)">+</button>
+              <button class="ci-remove" onclick="removeCartItem(${index})">×</button>
+            </div>
+            <div class="ci-line-total">${naira(line)}</div>
+          </div>
+        </div>`;
+    });
+    itemsEl.innerHTML = html;
+
+    const shipping = subtotal >= 100000 ? 0 : 3500;
+    const total = subtotal + shipping;
+    totalsEl.innerHTML = `
+      <div class="t-row"><span>Subtotal</span><span>${naira(subtotal)}</span></div>
+      <div class="t-row"><span>Delivery (nationwide)</span><span>${shipping === 0 ? 'FREE' : naira(shipping)}</span></div>
+      <div class="t-row grand"><span>Total</span><span>${naira(total)}</span></div>
+      <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+    `;
+  }
+  function changeCartQty(index, delta) {
+    if (!cart[index]) return;
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) cart.splice(index, 1);
+    if (navigator.vibrate) navigator.vibrate(8);
+    renderCartModal();
+    updateCartUI(false);
+  }
+  function removeCartItem(index) {
+    if (!cart[index]) return;
+    const name = cart[index].name;
+    cart.splice(index, 1);
+    if (navigator.vibrate) navigator.vibrate(15);
+    showToast(`${name.split(' ')[0]} removed`);
+    renderCartModal();
+    updateCartUI(false);
+  }
+  function clearCart() {
+    if (cart.length === 0) return;
+    if (!confirm('Clear everything from your cart?')) return;
+    cart.length = 0;
+    if (navigator.vibrate) navigator.vibrate(20);
+    showToast('Cart cleared');
+    renderCartModal();
+    updateCartUI(false);
+  }
+  function closeCheckout() {
+    document.getElementById('checkoutOverlay').classList.remove('active');
+  }
+
+  function buildOrderText() {
+    const name = document.getElementById('custName').value.trim();
+    const phone = document.getElementById('custPhone').value.trim();
+    const address = document.getElementById('custAddress').value.trim();
+    const notes = document.getElementById('custNotes').value.trim();
+    const baseUrl = window.location.origin;
+    let subtotal = 0;
+    let message = `Hello Amisha Kicks! I'd like to order:\n\n`;
+
+    cart.forEach(item => {
+      const line = item.price * item.qty;
+      subtotal += line;
+      const variantText = item.size && item.size !== 'One size' ? ` (Size ${item.size})` : '';
+
+      let imgUrl = item.image;
+      if (imgUrl && !imgUrl.startsWith('http')) imgUrl = baseUrl + '/' + imgUrl.replace(/^\//, '');
+      message += `• ${item.qty}× ${item.name}${variantText} — ${naira(line)}\n`;
+      if (imgUrl) message += `  📸 ${imgUrl}\n`;
+    });
+
+    const shipping = subtotal >= 100000 ? 0 : 3500;
+    const total = subtotal + shipping;
+    message += `\nSubtotal: ${naira(subtotal)}`;
+    message += `\nDelivery: ${shipping === 0 ? 'FREE' : naira(shipping)}`;
+    message += `\nTotal: ${naira(total)}`;
+    message += `\n\n--- Customer Details ---`;
+    if (name) message += `\nName: ${name}`;
+    if (phone) message += `\nPhone: ${phone}`;
+    if (address) message += `\nAddress: ${address}`;
+    if (notes) message += `\nNotes: ${notes}`;
+    return { text: message, name, phone, address };
+  }
+
+  function validateOrder() {
+    if (cart.length === 0) { showToast('Your cart is empty'); return false; }
+    const name = document.getElementById('custName').value.trim();
+    const phone = document.getElementById('custPhone').value.trim();
+    const address = document.getElementById('custAddress').value.trim();
+    if (!name) { showToast('Please enter your name'); document.getElementById('custName').focus(); return false; }
+    if (!phone) { showToast('Please enter your phone number'); document.getElementById('custPhone').focus(); return false; }
+    if (phone.replace(/\D/g, '').length < 10) { showToast('Please enter a valid phone number'); document.getElementById('custPhone').focus(); return false; }
+    if (!address) { showToast('Please enter delivery address'); document.getElementById('custAddress').focus(); return false; }
+    return true;
+  }
+
+  function sendOrder() {
+    if (!validateOrder()) return;
+    const { text } = buildOrderText();
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    try {
+      const win = window.open(url, '_blank');
+      if (!win) { copyToClipboard(text); showToast('Offline — order copied'); }
+    } catch (err) {
+      copyToClipboard(text);
+      showToast('Offline — order copied');
+    }
+  }
+  function copyOrder() {
+    if (!validateOrder()) return;
+    const { text } = buildOrderText();
+    copyToClipboard(text);
+    showToast('Order copied — paste in WhatsApp');
+  }
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+    } else fallbackCopy(text);
+  }
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  function copyNumber() { copyToClipboard(WHATSAPP_NUMBER); showToast('Number copied'); }
+  function copyHandle() { copyToClipboard('@' + INSTAGRAM_HANDLE); showToast('Handle copied'); }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  let toastTimer;
+  function showToast(text) {
+    const toast = document.getElementById('toast');
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+  }
+
+  /* ============================================================
+     PRODUCT DETAIL WINDOW
+     ============================================================ */
+  function openDetail(product) {
+    currentDetailProduct = product;
+    currentImageIndex = 0;
+    detailQty = 1;
+
+    const sizesList = product.sizes || ['One size'];
+    detailSelectedSize = sizesList[0];
+
+    document.getElementById('detailHeaderTitle').textContent = product.name;
+    document.getElementById('detailName').textContent = product.name;
+    document.getElementById('detailDesc').textContent = product.desc || '';
+    document.getElementById('detailPrice').innerHTML = product.oldPrice
+      ? `${naira(product.price)} <span class="old">${naira(product.oldPrice)}</span>`
+      : naira(product.price);
+
+    const sizesWrap = document.getElementById('detailSizes');
+    sizesWrap.innerHTML = '';
+    sizesList.forEach((sz, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'detail-size-pill' + (i === 0 ? ' active' : '');
+      btn.textContent = sz;
+      btn.onclick = () => {
+        sizesWrap.querySelectorAll('.detail-size-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        detailSelectedSize = sz;
+        if (navigator.vibrate) navigator.vibrate(8);
+      };
+      sizesWrap.appendChild(btn);
+    });
+
+    // Gallery
+    const images = imagesForProduct(product);
+    const track = document.getElementById('galleryTrack');
+    track.innerHTML = '';
+    images.forEach((src, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'gallery-slide';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = product.name + ' ' + (i + 1);
+      img.loading = 'lazy';
+      img.onerror = () => {
+        slide.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px;opacity:0.3;">👟</div>';
+      };
+      slide.appendChild(img);
+      track.appendChild(slide);
+    });
+
+    if (images.length === 0) {
+      const slide = document.createElement('div');
+      slide.className = 'gallery-slide';
+      slide.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px;opacity:0.3;">👟</div>';
+      track.appendChild(slide);
+    }
+
+    const dotsWrap = document.getElementById('galleryDots');
+    dotsWrap.innerHTML = '';
+    const total = Math.max(images.length, 1);
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = (e) => { e.stopPropagation(); goToImage(i); };
+      dotsWrap.appendChild(dot);
+    }
+
+    const prevBtn = document.getElementById('galleryPrev');
+    const nextBtn = document.getElementById('galleryNext');
+    if (total > 1) {
+      prevBtn.classList.remove('hidden');
+      nextBtn.classList.remove('hidden');
+    } else {
+      prevBtn.classList.add('hidden');
+      nextBtn.classList.add('hidden');
+    }
+
+    goToImage(0);
+
+    const soldMsg = document.getElementById('detailSoldMsg');
+    const actionsEl = document.getElementById('detailActions');
+    if (product.soldOut) {
+      soldMsg.style.display = 'block';
+      actionsEl.style.display = 'none';
+    } else {
+      soldMsg.style.display = 'none';
+      actionsEl.style.display = 'flex';
+    }
+
+    detailQty = 1;
+    document.getElementById('detailQtyDisplay').textContent = '1';
+
+    const addBtn = document.getElementById('detailAddBtn');
+    addBtn.textContent = 'Add to Cart';
+    addBtn.classList.remove('added');
+    addBtn.disabled = false;
+
+    document.getElementById('productDetail').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (navigator.vibrate) navigator.vibrate(10);
+  }
+
+  function closeDetail() {
+    document.getElementById('productDetail').classList.remove('active');
+    document.body.style.overflow = '';
+    currentDetailProduct = null;
+    if (navigator.vibrate) navigator.vibrate(8);
+  }
+
+  function goToImage(index) {
+    const track = document.getElementById('galleryTrack');
+    const slides = track.querySelectorAll('.gallery-slide');
+    if (slides.length === 0) return;
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    currentImageIndex = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    document.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+  function galleryPrev() { goToImage(currentImageIndex - 1); if (navigator.vibrate) navigator.vibrate(5); }
+  function galleryNext() { goToImage(currentImageIndex + 1); if (navigator.vibrate) navigator.vibrate(5); }
+
+  (function initGallerySwipe() {
+    const gallery = document.getElementById('detailGallery');
+    let startX = 0, startY = 0, isDragging = false;
+    gallery.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    }, { passive: true });
+    gallery.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      const diffX = startX - endX;
+      const diffY = startY - endY;
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+        if (diffX > 0) galleryNext(); else galleryPrev();
+      }
+    }, { passive: true });
+  })();
+
+  function detailChangeQty(delta) {
+    detailQty = Math.max(1, Math.min(20, detailQty + delta));
+    document.getElementById('detailQtyDisplay').textContent = detailQty;
+    if (navigator.vibrate) navigator.vibrate(8);
+  }
+
+  function detailAddToCart() {
+    if (!currentDetailProduct || currentDetailProduct.soldOut) return;
+    const chosenImage = chosenImageFor(currentDetailProduct);
+    if (!chosenImage) { showToast('No image available'); return; }
+
+    const existing = cart.find(i =>
+      i.name === currentDetailProduct.name &&
+      i.size === detailSelectedSize
+    );
+    if (existing) {
+      existing.qty += detailQty;
+      existing.image = chosenImage;
+    } else {
+      cart.push({
+        name: currentDetailProduct.name,
+        size: detailSelectedSize,
+        price: currentDetailProduct.price,
+        qty: detailQty,
+        image: chosenImage
+      });
+    }
+
+    const btn = document.getElementById('detailAddBtn');
+    btn.classList.add('added');
+    btn.textContent = `✓ ${detailQty} added`;
+    setTimeout(() => {
+      btn.classList.remove('added');
+      btn.textContent = 'Add to Cart';
+    }, 1200);
+
+    if (navigator.vibrate) navigator.vibrate(15);
+    showToast(`${detailQty}× ${currentDetailProduct.name.split(' ')[0]} added`);
+    updateCartUI(true);
+  }
+
+  /* INIT */
+  async function init() {
+    try {
+      const products = await fetchProducts();
+      allProducts = shuffle(products);
+      renderCategories();
+      renderProducts();
+      updateCartUI(false);
+    } catch (err) {
+      document.getElementById('productGrid').innerHTML = `
+        <div class="empty-state">
+          <div class="icon">⚠️</div>
+          <h3>Could not load kicks</h3>
+          <p>${err.message}</p>
+        </div>`;
+      document.getElementById('resultCount').textContent = 'Error';
+    }
+
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('searchClear');
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = e.target.value;
+      clearBtn.classList.toggle('show', searchTerm.length > 0);
+      renderProducts();
+    });
+  }
+  init();
+
+  document.getElementById('checkoutOverlay').addEventListener('click', (e) => {
+    if (e.target.id === 'checkoutOverlay') closeCheckout();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (document.getElementById('productDetail').classList.contains('active')) closeDetail();
+    }
+  });
+  document.getElementById('productDetail').addEventListener('click', (e) => {
+    if (e.target.id === 'productDetail') closeDetail();
+  });
+</script>
+
+</body>
+</html>
